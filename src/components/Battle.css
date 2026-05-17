@@ -202,3 +202,21 @@
   opacity: 0.4;
   cursor: not-allowed;
 }
+
+/* Status condition badges */
+.status-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-left: 6px;
+  vertical-align: middle;
+  color: white;
+  font-family: monospace;
+}
+.status-psn { background: #7c3aed; }
+.status-brn { background: #dc2626; }
+.status-par { background: #ca8a04; }
+.status-slp { background: #4b5563; }
+.status-frz { background: #0284c7; }

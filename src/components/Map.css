@@ -66,3 +66,8 @@
 .tile-cave {
   background-color: #57534e;
 }
+
+.tile-pc {
+  background-color: #1e3a5f;
+  border: 1px solid #3b82f6;
+}

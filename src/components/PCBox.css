@@ -1,0 +1,151 @@
+.pcbox-overlay {
+  position: absolute;
+  inset: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  font-family: 'Courier New', monospace;
+}
+
+.pcbox-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #1e3a5f;
+  border-bottom: 3px solid #2563eb;
+}
+
+.pcbox-title {
+  font-weight: bold;
+  font-size: 15px;
+  color: #93c5fd;
+  letter-spacing: 2px;
+  margin-right: 4px;
+}
+
+.pcbox-tabs {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.pcbox-tabs button {
+  background: #1e293b;
+  color: #94a3b8;
+  border: 2px solid #334155;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.pcbox-tabs button.tab-active {
+  background: #2563eb;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.pcbox-close {
+  background: #1e293b;
+  color: #94a3b8;
+  border: 2px solid #334155;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.pcbox-close:hover {
+  background: #334155;
+}
+
+.pcbox-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.pcbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pcbox-empty {
+  color: #64748b;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.pc-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+}
+
+.pc-sprite {
+  font-size: 22px;
+  min-width: 28px;
+  text-align: center;
+}
+
+.pc-info {
+  flex: 1;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.pc-info em {
+  font-style: normal;
+  color: #64748b;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.pc-hp {
+  font-size: 11px;
+  color: #64748b;
+  min-width: 80px;
+  text-align: right;
+}
+
+.pc-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.pc-btn:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.pc-btn:disabled {
+  background: #334155;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.pcbox-hint {
+  padding: 8px 14px;
+  font-size: 11px;
+  color: #475569;
+  background: #0f172a;
+  border-top: 1px solid #1e293b;
+  text-align: center;
+}

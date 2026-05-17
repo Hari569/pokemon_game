@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
-import { DIRECTIONS, TILE_TREE, TILE_WATER, TILE_NPC, TILE_POKEBALL, TILE_TALL_GRASS, TILE_TRAINER, TILE_CAVE } from '../constants';
+import { DIRECTIONS, TILE_TREE, TILE_WATER, TILE_NPC, TILE_POKEBALL, TILE_TALL_GRASS, TILE_TRAINER, TILE_CAVE, TILE_PC } from '../constants';
 
-const BLOCKED_TILES = new Set([TILE_TREE, TILE_WATER, TILE_NPC, TILE_POKEBALL, TILE_TRAINER, TILE_CAVE]);
+const BLOCKED_TILES = new Set([TILE_TREE, TILE_WATER, TILE_NPC, TILE_POKEBALL, TILE_TRAINER, TILE_CAVE, TILE_PC]);
 
 function isWalkable(x, y, mapData) {
   if (x < 0 || x >= mapData.cols || y < 0 || y >= mapData.rows) return false;
@@ -16,6 +16,7 @@ function getInteractable(x, y, mapData) {
   if (tile === TILE_POKEBALL) return { type: 'pokeball', x, y };
   if (tile === TILE_TRAINER) return { type: 'trainer', x, y };
   if (tile === TILE_CAVE) return { type: 'cave', x, y };
+  if (tile === TILE_PC)   return { type: 'pc', x, y };
   return null;
 }
 

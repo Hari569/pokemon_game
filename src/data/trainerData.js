@@ -16,6 +16,7 @@ export const TRAINERS = {
     name: 'Gym Leader Brock',
     sprite: '🧑',
     reward: 200,
+    badgeKey: 'BOULDER_BADGE',
     party: [
       createPokemonInstance(POKEMON_DATA.GEODUDE, 10),
       createPokemonInstance(POKEMON_DATA.GEODUDE, 12),

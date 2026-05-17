@@ -9,6 +9,7 @@ export const TILE_TALL_GRASS = 4;
 export const TILE_POKEBALL = 5;
 export const TILE_TRAINER = 6;
 export const TILE_CAVE = 7;  // Cave entrance (map transition)
+export const TILE_PC = 8;    // PC storage terminal
 
 export const DIRECTIONS = {
   UP: 'up',
@@ -40,8 +41,8 @@ export const MAPS = {
       [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
       // row 1 - open town
       [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-      // row 2 - NPC + gym trainer + trees
-      [1,0,1,1,0,0,3,0,0,6,0,0,0,7,0,0,0,0,0,1],
+      // row 2 - NPC + gym trainer + PC + cave
+      [1,0,1,1,0,0,3,0,0,6,0,8,0,7,0,0,0,0,0,1],
       // row 3 - pokeballs (starters)
       [1,5,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
       // row 4 - pokeballs

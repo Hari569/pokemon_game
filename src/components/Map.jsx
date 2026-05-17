@@ -1,5 +1,5 @@
 import React from 'react';
-import { TILE_SIZE, TILE_GRASS, TILE_TREE, TILE_WATER, TILE_NPC, TILE_TALL_GRASS, TILE_POKEBALL, TILE_TRAINER, TILE_CAVE } from '../constants';
+import { TILE_SIZE, TILE_GRASS, TILE_TREE, TILE_WATER, TILE_NPC, TILE_TALL_GRASS, TILE_POKEBALL, TILE_TRAINER, TILE_CAVE, TILE_PC } from '../constants';
 import './Map.css';
 
 export function Map({ mapData }) {
@@ -23,6 +23,7 @@ export function Map({ mapData }) {
           if (tile === TILE_POKEBALL)   { className += 'tile-pokeball'; content = '\u{1F534}'; }
           if (tile === TILE_TRAINER)    { className += 'tile-trainer'; content = '\u{1F9D1}'; }
           if (tile === TILE_CAVE)       { className += 'tile-cave'; content = '\u{1F30B}'; }
+          if (tile === TILE_PC)         { className += 'tile-pc';   content = '\u{1F4BB}'; }
 
           return (
             <div
