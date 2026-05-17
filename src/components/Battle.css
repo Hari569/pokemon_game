@@ -1,0 +1,204 @@
+.battle-container {
+  width: 100%;
+  height: 100%;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Courier New', monospace, sans-serif;
+  animation: battle-enter 0.3s ease-out;
+}
+
+.battle-scene {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(to bottom, #bae6fd 0%, #e0f2fe 50%, #dcfce7 50%, #bbf7d0 100%);
+  overflow: hidden;
+}
+
+.enemy-side {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  width: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.player-side {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 60%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.pokemon-sprite {
+  font-size: 80px;
+  filter: drop-shadow(0px 10px 0px rgba(0,0,0,0.2));
+  animation: float 3s ease-in-out infinite;
+}
+
+.player-sprite {
+  transform: scaleX(-1); /* Face right */
+}
+
+.battle-stats {
+  background: white;
+  border: 3px solid #334155;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 150px;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+}
+
+.stat-name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.health-bar-container {
+  height: 8px;
+  background-color: #cbd5e1;
+  border: 2px solid #64748b;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.health-bar-fill {
+  height: 100%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.hp-text {
+  font-size: 10px;
+  text-align: right;
+  color: #64748b;
+}
+
+.battle-ui {
+  height: 30%;
+  background: white;
+  border-top: 4px solid #334155;
+  display: flex;
+}
+
+.battle-text-box {
+  flex: 1;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.5;
+  border-right: 4px solid #334155;
+  display: flex;
+  align-items: center;
+}
+
+.battle-menu {
+  width: 250px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+  background: #334155;
+  padding: 2px;
+}
+
+.battle-menu button {
+  background: white;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+
+.battle-menu button:hover {
+  background: #f1f5f9;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0px) scaleX(var(--flip, 1)); }
+  50%  { transform: translateY(-5px) scaleX(var(--flip, 1)); }
+  100% { transform: translateY(0px) scaleX(var(--flip, 1)); }
+}
+
+.player-sprite {
+  --flip: -1;
+}
+.enemy-sprite {
+  --flip: 1;
+}
+
+/* Shake animation on hit */
+@keyframes shake {
+  0%   { transform: translateX(0)  scaleX(var(--flip, 1)); }
+  20%  { transform: translateX(-8px) scaleX(var(--flip, 1)); }
+  40%  { transform: translateX(8px)  scaleX(var(--flip, 1)); }
+  60%  { transform: translateX(-5px) scaleX(var(--flip, 1)); }
+  80%  { transform: translateX(5px)  scaleX(var(--flip, 1)); }
+  100% { transform: translateX(0)  scaleX(var(--flip, 1)); }
+}
+
+.shake {
+  animation: shake 0.5s ease-out !important;
+}
+
+@keyframes battle-enter {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Super effective screen flash */
+.flash-super {
+  animation: flash-super 0.6s ease-out;
+}
+
+@keyframes flash-super {
+  0%   { filter: brightness(1); }
+  25%  { filter: brightness(2.5) saturate(2); }
+  50%  { filter: brightness(1.5); }
+  100% { filter: brightness(1); }
+}
+
+/* EXP bar */
+.exp-bar-container {
+  height: 4px;
+  background: #cbd5e1;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.exp-bar-fill {
+  height: 100%;
+  background: #3b82f6;
+  transition: width 0.5s ease;
+  border-radius: 2px;
+}
+
+/* Move type badge */
+.move-type {
+  font-size: 9px;
+  opacity: 0.6;
+  margin-left: 6px;
+  text-transform: uppercase;
+}
+
+/* Active pokemon highlight in party list */
+.battle-menu button.active-pokemon {
+  border-left: 4px solid #3b82f6;
+  background: #eff6ff;
+}
+
+.battle-menu button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
